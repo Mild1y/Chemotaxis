@@ -32,20 +32,20 @@ Bacteria [] colony;
  	{
  		x = 250;
  		y = 500;
- 		c = (int)(Math.random()*255)+1;
+ 		//c = (int)(Math.random()*255)+1;
  	}  
  	void spread()
  	{
- 		if (mouseY > y)
+ 		if (mouseX > x)
  		{
- 			x = x + (int)(Math.random()*3)-1;
+ 			x = x + (int)(Math.random()*3)-2;
     		y = y + (int)(Math.random()*5)-3;
     	}
-    	else if (mouseY < y) 
+    	else if (mouseX < x) 
     	{
-    		x = x + (int)(Math.random()*3)-1;
-    		y = y + (int)(Math.random()*5)-1;
-    	}
+    		x = x + (int)(Math.random()*3);
+    		y = y + (int)(Math.random()*5)-3;
+    	} 
     	if (y < 25)
     	{
     		y = 475;
@@ -57,7 +57,12 @@ Bacteria [] colony;
  	}
  	void show()
  	{
- 		fill(0,c,0);
+ 		fill(255,255,0);
  		ellipse(x,y,10,10);
+ 		fill(0);
+ 		rect(x-5,y-1,10,3,5);
+ 		fill(211,211,211);
+ 		ellipse(x-5,y,5,5);
+ 		ellipse(x+5,y,5,5);
  	}
  }    
